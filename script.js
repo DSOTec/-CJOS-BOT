@@ -50,7 +50,7 @@ const getChatResponse = async (incomingChatDiv) => {
         if (data.candidates && data.candidates.length > 0) {
             pElement.textContent = data.candidates[0].content;
         } else {
-            pElement.textContent = "No response from Gemini AI.";
+            pElement.textContent = "No response from CJOS BOT.";
         }
     } catch (error) {
         console.error(error);
