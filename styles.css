@@ -20,7 +20,7 @@ body {
 
 header {
     color: rgb(3, 48, 54);
-    padding: 3em;
+    padding: 2em;
     width: 80%;
     display: flex;
     align-items: center;
@@ -28,7 +28,8 @@ header {
 
 .col+.col {
     margin-left: 40px;
-    width: 100%
+    width: 100%;
+    font-size: 1.4rem;
 }
 
 img {
