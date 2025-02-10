@@ -27,7 +27,8 @@ header {
 }
 
 .col+.col {
-    margin-left: 30px;
+    margin-left: 40px;
+    width: 100%
 }
 
 img {
@@ -43,9 +44,9 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 60vh;
     color: whitesmoke;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     animation: animateDots 1.5s var(--delay) ease-in-out infinite;
 }
 
