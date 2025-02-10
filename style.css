@@ -184,7 +184,6 @@ span.material-icons  {
     display: flex;
     padding: 20px 10px;
     justify-content: center;
-    align-items: center;
     background: var(--outgoing-chat-bg);
     border: 1px solid var(--incoming-chat-border);
 }
@@ -199,6 +198,8 @@ span.material-icons  {
 .typing-content .typing-textarea {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 
 }
