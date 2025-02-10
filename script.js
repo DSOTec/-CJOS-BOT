@@ -3,7 +3,7 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 
 let userText = null;
-const API_KEY = "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";
+const API_KEY = "AIzaSyAwruC0HBqh858ESsz59YdDwmvn_Id9HoA";
 
 const createElement = (html, className) => {
     // Create new div and apply chat, specified class and set html content of div
@@ -14,7 +14,7 @@ const createElement = (html, className) => {
 }
 
 const getChatResponse = async (incomingChatDiv) => {
-    const API_URL = "https://api.openai.com/v1/completions";
+    const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GEMINI_API_KEY";
     const pElement = document.createElement("p");
 
     // Define the properties and data for the API request
