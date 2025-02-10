@@ -91,7 +91,6 @@ header img {
 .chat-container .chat.outgoing {
     background: var(--outgoing-chat-bg);
     border: 1px solid var(--outgoing-chat-border);
- 
 }
 
 .chat-container .chat.incoming {
@@ -139,7 +138,7 @@ header img {
     max-width: 500px;
 }
 
-span.material-symbol-rounded {
+span.material-icons  {
     user-select: none;
     cursor: pointer;
 }
