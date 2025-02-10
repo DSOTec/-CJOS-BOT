@@ -3,7 +3,7 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 
 let userText = null;
-const API_KEY = "AIzaSyAwruC0HBqh858ESsz59YdDwmvn_Id9HoA";
+const API_KEY = "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";
 
 const createElement = (html, className) => {
     // Create new div and apply chat, specified class and set html content of div
@@ -14,7 +14,7 @@ const createElement = (html, className) => {
 }
 
 const getChatResponse = async (incomingChatDiv) => {
-    const API_URL = "https://aistudio.google.com/app/apikey";
+    const API_URL = "https://api.openai.com/v1/completions";
     const pElement = document.createElement("p");
 
     // Define the properties and data for the API request
@@ -22,7 +22,7 @@ const getChatResponse = async (incomingChatDiv) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": 'Bearer ${API_KEY}'
+            "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
             model: "text-davinci-003",
@@ -40,6 +40,7 @@ const getChatResponse = async (incomingChatDiv) => {
         pElement.textContent = response.choices[0].text.trim();
     } catch(error) {
         console.log(error);
+        pElement.textContent = "Error: Unable to fetch response."
     }
 
     incomingChatDiv.querySelector(".typing-animation").remove();
@@ -47,7 +48,7 @@ const getChatResponse = async (incomingChatDiv) => {
 }
 
 const copyResponse = (copyBtn) => {
-    const responseTextElement = copyBtn.parentElemnt.querySelector("p");
+    const responseTextElement = copyBtn.parentElement.querySelector("p");
     navigator.clipboard.writeText(responseTextElement.textContent)
     copyBtn.textContent = "done";
     setTimeout(() => copyBtn.textContent = "content_copy", 1000);
@@ -55,7 +56,7 @@ const copyResponse = (copyBtn) => {
 
 const showTypingAnimation = () => {
     const html = `<div class="chat-content">
-                <div class="  chat-details">
+                <div class="chat-details">
                     <img src="chatbot.jpg" alt="user-img">
                     <div class="typing-animation">
                         <div class="typing-dot" style="--delay: 0.2s"></div>
@@ -63,7 +64,7 @@ const showTypingAnimation = () => {
                         <div class="typing-dot" style="--delay: 0.4s"></div>
                     </div>
                 </div>
-                <span onclick="copyResponse(this) class="material-icons">content_copy</span>
+                <span onclick="copyResponse(this)" class="material-icons">content_copy</span>
             </div>`;
 
     // Create an outgoing chat div with user's message and append it to chat container
