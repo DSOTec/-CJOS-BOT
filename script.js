@@ -22,26 +22,41 @@ const getChatResponse = async (incomingChatDiv) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
+         /*   "Authorization": `Bearer ${API_KEY}`*/
         },
         body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: userText,
-            max_tokens: 2048,
-            temperature: 0.2,
-            n: 1,
-            stop: null
+        //    model: "text-davinci-003",
+          //  prompt: userText,
+          //  max_tokens: 2048,
+         //   temperature: 0.2,
+         //   n: 1,
+           // stop: null
+           contents: [{ parts: [{ text: userText }] }]
         })
     }
 
     // Send POST request to API, get response and set the response as paragraph element text
-    try {
+  /*  try {
         const response = await (await fetch(API_URL, requestOptions)).json();
         pElement.textContent = response.choices[0].text.trim();
     } catch(error) {
         console.log(error);
         pElement.textContent = "Error: Unable to fetch response."
+    } */
+    try {
+        const response = await fetch(API_URL, requestOptions);
+        const data = await response.json();
+        
+        if (data.candidates && data.candidates.length > 0) {
+            pElement.textContent = data.candidates[0].content;
+        } else {
+            pElement.textContent = "No response from Gemini AI.";
+        }
+    } catch (error) {
+        console.error(error);
+        pElement.textContent = "Error: Unable to fetch response.";
     }
+
 
     incomingChatDiv.querySelector(".typing-animation").remove();
     incomingChatDiv.querySelector(".chat-details").appendChild(pElement);
