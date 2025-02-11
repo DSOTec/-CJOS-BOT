@@ -1,2 +1,2 @@
 # -CJOS-BOT
-An AI Bot 
+An AI Bot.
