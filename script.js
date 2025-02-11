@@ -136,9 +136,9 @@ deleteButton.addEventListener("click", () => {
     // Remove the chats from local storage and call loadDataFromlocalstorage function
     if(confirm("Are you sure you want to delete all the chats?")) {
         localStorage.removeItem("all-chats");
-        loadDataFromLocalStorage();
+        loadDataFromLocalstorage();
     }
-});
+})
     
 sendButton.addEventListener("click", handleOutgoingChat);
 
