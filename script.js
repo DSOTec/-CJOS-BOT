@@ -16,7 +16,7 @@ const loadDataFromLocalstorage = () => {
     const defaultText = `<div class="default-text">
                             <h1>CJOS BOT</h1>
                             <p>We are here to serve better. <br> Your chat history will be displayed here.</p>
-                            </div> `
+                            </div>`
     
     chatContainer.innerHTML = localStorage.getItem("all-chats"); || defaultText;
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
