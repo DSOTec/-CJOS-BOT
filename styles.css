@@ -16,7 +16,7 @@ body {
     box-shadow: 0 1px 3px rgb(3, 48, 54);
     font-size: 1.2rem;
     width: 100%;
-    height: 20vh
+    /* height: 20vh */
 }
 
 header {
@@ -28,7 +28,7 @@ header {
 }
 
 .col+.col {
-    margin-left: 40px;
+    margin-left: 10px;
     width: 100%;
     font-size: 1.4rem;
 }
