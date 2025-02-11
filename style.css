@@ -67,7 +67,12 @@ header img {
     overflow-y: auto;
     margin: 0 1em;
 }
-
+.default-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 :where(.chat-container, textarea)::-webkit-scrollbar {
     width: 6px;
 }
