@@ -12,8 +12,13 @@ const loadDataFromLocalstorage = () => {
 
     document.body.classList.toggle("light-mode", themeColor === "light_mode");
     themeButton.innerText = document.body.classList.contains("light-mode") ?"dark_mode" : "light_mode";
+
+    const defaultText = `<div class="default-text">
+                            <h1>CJOS BOT</h1>
+                            <p>We are here to serve better. <br> Your chat history will be displayed here.</p>
+                            </div> `
     
-    chatContainer.innerHTML = localStorage.getItem("all-chats");
+    chatContainer.innerHTML = localStorage.getItem("all-chats"); || defaultText;
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
 }
 
